@@ -1,2 +1,11 @@
-# spring-example-db-tx
-spring example for database transaction
+## README.md ##
+
+
+### build site document ###
+
+    >mvn clean:site
+    
+
+### build test ###
+
+    >mvn clean test

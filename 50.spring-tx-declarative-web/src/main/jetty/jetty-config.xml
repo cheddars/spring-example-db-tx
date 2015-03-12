@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configure class="org.mortbay.jetty.webapp.WebAppContext">
+	<Array id="plusConfig" type="java.lang.String">
+		<Item>org.mortbay.jetty.webapp.WebInfConfiguration</Item>
+		<Item>org.mortbay.jetty.plus.webapp.EnvConfiguration</Item>
+		<Item>org.mortbay.jetty.plus.webapp.Configuration</Item>
+		<Item>org.mortbay.jetty.webapp.JettyWebXmlConfiguration</Item>
+		<Item>org.mortbay.jetty.webapp.TagLibConfiguration</Item>
+	</Array>
+	<New id="webAppContext" class="org.mortbay.jetty.webapp.WebAppContext">
+		<Set name="ConfigurationClasses">
+			<Ref id="plusConfig" />
+		</Set>
+	</New>
+	
+	<New id="postgreSQL" class="org.mortbay.jetty.plus.naming.Resource">
+		<Arg>jdbc/postgreSQL</Arg>
+		<Arg>
+			<New class="org.apache.commons.dbcp.BasicDataSource">
+				<Set name="driverClassName">org.postgresql.Driver</Set>
+				<Set name="url">jdbc:postgresql://scghome.cafe24.com:5432/spring-test</Set>
+				<Set name="username">spring-test</Set>
+				<Set name="password">spring-test</Set>
+			</New>
+		</Arg>
+	</New>
+
+</Configure>
